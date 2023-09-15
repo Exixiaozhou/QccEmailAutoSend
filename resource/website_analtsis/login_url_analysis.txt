@@ -1,0 +1,67 @@
+步骤1
+GET https://gcaptcha4.geetest.com/load
+captcha_id: 8daf8b2d78f74aea6a77c0d10da77d41  # 固定字符串
+challenge: e3c4a1a6-504a-48bb-a455-b24834644120
+           97083af8-bf05-4ccb-9d5f-111d0cb021ee
+client_type: web  # 固定字符串
+lang: zh-cn  # 固定字符串
+callback: geetest_1690596983762   # geetest_ 拼接时间戳
+
+步骤2
+GET https://gcaptcha4.geetest.com/verify?
+
+提交的参数：
+callback: geetest_1690596022549  # geetest_ 拼接时间戳
+captcha_id： 8daf8b2d78f74aea6a77c0d10da77d41  # 固定字符串
+client_type: web  # 固定字符串
+lot_number: e0149928407648b0904102516d30e4f5  步骤1请求返回的 lot_number
+payload: 步骤1请求返回的 payload
+process_token:  步骤1请求返回的 process_token
+payload_protocol: 1   # 固定字符串
+pt: 1  # 固定字符串
+w: 加密轨迹
+
+'{"passtime":5912,"userresponse":[[6770,4002],[735,5269],[8701,1830]],"device_id":"05c041505610c5f2ed1270b81ef83af6","lot_number":"cd95b1e1a94247e3b273708479f7d02d","pow_msg":"1|0|md5|2023-07-29T12:36:02.847951+08:00|8daf8b2d78f74aea6a77c0d10da77d41|cd95b1e1a94247e3b273708479f7d02d||e032eed881ea7355","pow_sign":"7e8d21ae78ecb98e2994cd57c65bf80c","geetest":"captcha","lang":"zh","ep":"123","uzfw":"433775853","yeg6":"d6w9","em":{"ph":0,"cp":0,"ek":"11","wd":1,"nt":0,"si":0,"sc":0}}'
+
+'{"passtime":5912,"userresponse":[[6770,4002],[735,5269],[8701,1830]],"device_id":"05c041505610c5f2ed1270b81ef83af6","lot_number":"cd95b1e1a94247e3b273708479f7d02d",
+"pow_msg":"1|0|md5|2023-07-29T12:36:02.847951+08:00|8daf8b2d78f74aea6a77c0d10da77d41|cd95b1e1a94247e3b273708479f7d02d||e032eed881ea7355",
+"pow_sign":"7e8d21ae78ecb98e2994cd57c65bf80c","geetest":"captcha","lang":"zh","ep":"123","uzfw":"433775853","yeg6":"d6w9","em":{"ph":0,"cp":0,"ek":"11","wd":1,"nt":0,"si":0,"sc":0}}'
+
+device_id = '05c041505610c5f2ed1270b81ef83af6', 固定
+lot_number = 步骤1请求返回的 lot_number
+pow_msg = 步骤1请求返回的 "1|0|md5|” + datetime + "|8daf8b2d78f74aea6a77c0d10da77d41" + "|步骤1请求返回的 lot_number" + "||e032eed881ea7355"
+pow_sign =
+
+"geetest":"captcha","lang":"zh","ep":"123","uzfw":"433775853","yeg6":"d6w9","em":{"ph":0,"cp":0,"ek":"11","wd":1,"nt":0,"si":0,"sc":0}}'
+"lang":"zh","ep":"123","uzfw":"433775853","yeg6":"d6w9","em":{"ph":0,"cp":0,"ek":"11","wd":1,"nt":0,"si":0,"sc":0}}'
+"lang":"zh","ep":"123","uzfw":"433775853","yeg6":"d6w9","em":{"ph":0,"cp":0,"ek":"11","wd":1,"nt":0,"si":0,"sc":0}}'
+
+xSJqOy81RFro17RrPzpVa8WVeCF5uKg1waKO1VMo_m4YYigefnun4dQz7XiIWw50ZCghdk-ueLTP_AW0n20PKUjRGtLdLcjFy1NwuMUjN02PT7bC5KvbUL2F93NAG0gcMtm-Jj8LC5bqoQSosZNTxS5fKG-cocaK1ImNl1nMVdyr3ODAB7Y2UhrrPkw1l27qK7uMD4ffoVJ2neQcYMWK7Qkq0QXLUycbhzpXNTShBuD89lLuL4Yq41X2YwNtImswdXwWbPxLwsI5x0eVtIVLVMhK7-BGlyW6_mAY-lj6iFD5m33eaRUcSN7zK-NPQAwyH_Ou0VSIqDGUjzqtBeW42thU_crmAg5gkATyxSWkjqYE_5XapxjTN7mN0oBa1jlLnAPRHlInLhFhT8TBW57iM5yOTzAJ0m7m9OTPgHon4-9VjIA73dw1q3ic8v8K7I07o8PSaVxkze5XEv2Vk31S9af0a9jBzYviG-PuLNvCSOMqOItkUdkVyiKHu80bTxbQXEnUYZSj0EKx5qrdQgTEQ_O0XuwDQDAwS-S1FQ3-G7Db-nbmmJj6jm-FEykKNopevKw58movyqSat4gL5TPMVm9bckfqbvB6lqe6INLQ8mOYqAYbFRlD4Hyvagh0hQ_SfgXDzFQhbYPIkfZcNjhkedS-7JuGBXQnZDliNnYeJ6Kk8AojE2MIo1hawvtoglRuZu-KlMnbQzz9y34b0V1qRm934XBdtde1OBKv4YxIYQQ=
+xSJqOy81RFro17RrPzpVa8WVeCF5uKg1waKO1VMo_m4YYigefnun4dQz7XiIWw50ZCghdk-ueLTP_AW0n20PKUjRGtLdLcjFy1NwuMUjN02PT7bC5KvbUL2F93NAG0gcMtm-Jj8LC5bqoQSosZNTxS5fKG-cocaK1ImNl1nMVdyr3ODAB7Y2UhrrPkw1l27qK7uMD4ffoVJ2neQcYMWK7Qkq0QXLUycbhzpXNTShBuD89lLuL4Yq41X2YwNtImswdXwWbPxLwsI5x0eVtIVLVMhK7-BGlyW6_mAY-lj6iFD5m33eaRUcSN7zK-NPQAwyH_Ou0VSIqDGUjzqtBeW42thU_crmAg5gkATyxSWkjqYE_5XapxjTN7mN0oBa1jlLnAPRHlInLhFhT8TBW57iM5yOTzAJ0m7m9OTPgHon4-9VjIA73dw1q3ic8v8K7I07o8PSaVxkze5XEv2Vk31S9af0a9jBzYviG-PuLNvCSOMqOItkUdkVyiKHu80bTxbQXEnUYZSj0EKx5qrdQgTEQ_O0XuwDQDAwS-S1FQ3-G7Db-nbmmJj6jm-FEykKNopevKw58movyqSat4gL5TPMVm9bckfqbvB6lqe6INLQ8mOYqAYbFRlD4Hyvagh0hQ_SfgXDzFQhbYPIkfZcNjhkedS-7JuGBXQnZDliNnYeJ6Kk8AojE2MIo1hawvtoglRuZu-KlMnbQzz9y34b0V1qRm934XBdtde1OBKv4YxIYQQ="
+
+captcha_output "1Yovc--DvW3TPIrCAvz5rh-DOdO91uk1V_gZpJEsQd1IP2abS28GCWWWpw27rSCbR2-48clQjf8H9CHkrLlIZFEfufnIdcbbv5pk0ijRiH-L6eeLkt5TxQJzOjpmnBVvwDmicmQXMg_hKI16FTmUV3OVEvcd_58Kp1zXonsMoOVq0TUduJU06LEXJPuQzXS4xC9QtcXnmdN42rnrteZvgPRF7U3IxLJz9jJkUFPQynkfrpIpQtArzOqjMi4SK4he"
+login的 captcha_output 参数需求请求 gcaptcha4 拿到 captcha_output
+login的 captcha_id 参数需求请求 gcaptcha4 拿到 captcha_id
+login的 lot_number 参数需求请求 gcaptcha4 拿到 lot_number
+login的 pass_token 参数需求请求 gcaptcha4 拿到 pass_token
+
+pass_token: "f63dcbfc7b0c8b6e9d52d514650bf033c518bb4e227d07db0a3284450614c2a7"
+lot_number: "16b6a94d88174702a7dfac8e2810f811"
+captcha_id: "8daf8b2d78f74aea6a77c0d10da77d41"
+
+
+web 登录
+POST
+参数分析
+areaCode: "86", 固定参数
+captcha: {
+    captcha_id: "8daf8b2d78f74aea6a77c0d10da77d41"  # 固定
+    captcha_output: "1Yovc--DvW3TPIrCAvz5rh-DOdO91uk1V_gZpJEsQd1IP2abS28GCWWWpw27rSCbPEh5stwJ7VJthBXxZy5aPUqe0CHUrl4-qKmIB9oiBmVbJXO6HVntYvdy8oMCS4t8EhQtfKZeedtOIcOzgBXCFdBqvdIu7tMLZkg8FGrlNjP71an-uPwf2GhRUFHj6ztJZ_v0zZApSjH4efMabxe8EFygKy15Nj6jJkS2-fCj6LADMSdccIfTcu1fYDXQmUDF"
+    gen_time: "1690508125"  # 时间戳
+    lot_number: "37aa305412534604be7b59ca0cb3f6ec"  # 服务器请求返回 GET https://gcaptcha4.geetest.com/verify
+    pass_token: "efa93a24cad00d2d214b05a5ad5c9c15c2aaeefac31581a6c413e69c2cff84f9"  # 服务器请求返回 GET https://gcaptcha4.geetest.com/verify
+    signKey: "d091f62d7cae44f69b01b2f35515400f"  # 服务器请求返回 GET https://www.qcc.com/api/auth/getCaptchaSign
+}
+epass: "U2FsdGVkX18wWK9bzVVsqvJB7ZDdXHabX4HyOEmElL8="  # 登录密码+"qcc" 加密字符串
+mobile: "13357122135" 手机号
+
